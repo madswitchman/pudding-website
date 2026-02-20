@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48">
+  <!-- Pudding dome -->
+  <path d="M16 32 Q16 10 32 8 Q48 10 48 32 Z" fill="#D4952A"/>
+  <!-- Plate brim -->
+  <path d="M6 32 Q6 28 14 28 L50 28 Q58 28 58 32 Q58 38 50 40 L14 40 Q6 38 6 32 Z" fill="#D4952A"/>
+</svg>
