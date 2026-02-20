@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6c547"/>
+      <stop offset="50%" stop-color="#e5a820"/>
+      <stop offset="100%" stop-color="#f6c547"/>
+    </linearGradient>
+  </defs>
   <!-- Pudding dome -->
-  <path d="M16 32 Q16 10 32 8 Q48 10 48 32 Z" fill="#D4952A"/>
-  <!-- Plate brim -->
-  <path d="M6 32 Q6 28 14 28 L50 28 Q58 28 58 32 Q58 38 50 40 L14 40 Q6 38 6 32 Z" fill="#D4952A"/>
+  <path d="M28 48 C28 22, 36 12, 50 12 C64 12, 72 22, 72 48 Z" fill="url(#gold)"/>
+  <!-- Plate base -->
+  <path d="M22 48 L78 48 C82 48 84 50 84 53 C84 56 82 58 78 58 L22 58 C18 58 16 56 16 53 C16 50 18 48 22 48 Z" fill="url(#gold)"/>
 </svg>
