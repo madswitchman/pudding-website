@@ -13,19 +13,26 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.15 } },
 }
 
-function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function Section({ children, className = '', divider = true }: { children: React.ReactNode; className?: string; divider?: boolean }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={stagger}
-      className={`relative py-24 md:py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto ${className}`}
-    >
-      {children}
-    </motion.section>
+    <>
+      {divider && (
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+          <div className="h-px bg-gradient-to-r from-transparent via-navy-600/50 to-transparent" />
+        </div>
+      )}
+      <motion.section
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={stagger}
+        className={`relative py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto ${className}`}
+      >
+        {children}
+      </motion.section>
+    </>
   )
 }
 
