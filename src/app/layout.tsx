@@ -5,6 +5,27 @@ export const metadata: Metadata = {
   title: 'PUDDING - Provable Unified Data-Driven Intelligent Normative Governance',
   description: 'The open-source compliance and governance framework for agentic AI. The proof is in the PUDDING.',
   keywords: ['AI governance', 'compliance', 'HIPAA', 'SOC 2', 'agentic AI', 'open source'],
+  openGraph: {
+    title: 'PUDDING - AI Governance Framework',
+    description: 'The open-source compliance and governance framework for agentic AI. The proof is in the PUDDING.',
+    url: 'https://getpudding.dev',
+    siteName: 'PUDDING',
+    images: [
+      {
+        url: 'https://getpudding.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'PUDDING - Provable Unified Data-Driven Intelligent Normative Governance',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PUDDING - AI Governance Framework',
+    description: 'The open-source compliance and governance framework for agentic AI.',
+    images: ['https://getpudding.dev/og-image.png'],
+  },
 }
 
 export default function RootLayout({
