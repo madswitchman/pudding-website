@@ -231,7 +231,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-4 tracking-tight">
-              <span className="gradient-text">🍮 PUDDING</span>
+              <img src="/pudding-icon.svg" alt="" className="inline-block h-[1.15em] mr-3 align-bottom translate-y-[0.05em]" /><span className="gradient-text">PUDDING</span>
             </h1>
           </motion.div>
           <motion.p
