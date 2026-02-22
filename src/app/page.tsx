@@ -125,9 +125,9 @@ function ArchitectureDiagram() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const layers = [
-    { label: 'AI Agents (agent-net)', items: ['LLM Agent', 'Code Agent', 'Data Agent', 'Custom Agent'], color: 'from-indigo-500/20 to-indigo-600/10', border: 'border-indigo-500/30' },
-    { label: 'PUDDING Gateway', items: ['Regex', 'NER (spaCy)', 'Presidio', 'Entropy', 'Secret Patterns'], color: 'from-amber-400/20 to-amber-500/10', border: 'border-amber-400/40', highlight: true, sublabel: '5 Detection Backends' },
-    { label: 'External Services (backend-net)', items: ['APIs', 'Databases', 'LLM Providers', 'Cloud Services'], color: 'from-slate-500/20 to-slate-600/10', border: 'border-slate-500/30' },
+    { label: 'AI Agents', items: ['LLM Agent', 'Code Agent', 'Data Agent', 'Custom Agent'], color: 'from-indigo-500/20 to-indigo-600/10', border: 'border-indigo-500/30' },
+    { label: 'PUDDING Gateway', items: ['Policy Engine', 'Data Sanitizer', 'Audit Logger', 'User Profiles', 'Secret Detection'], color: 'from-amber-400/20 to-amber-500/10', border: 'border-amber-400/40', highlight: true },
+    { label: 'External Services', items: ['APIs', 'Databases', 'LLM Providers', 'Cloud Services'], color: 'from-slate-500/20 to-slate-600/10', border: 'border-slate-500/30' },
   ]
 
   return (
@@ -140,16 +140,9 @@ function ArchitectureDiagram() {
           transition={{ delay: i * 0.25, duration: 0.6 }}
           className={`relative bg-gradient-to-r ${layer.color} border ${layer.border} rounded-2xl p-6 ${layer.highlight ? 'glow-amber' : ''}`}
         >
-          <div className="flex items-center gap-3 mb-4">
-            <h4 className={`text-sm font-semibold uppercase tracking-wider ${layer.highlight ? 'text-amber-400' : 'text-slate-400'}`}>
-              {layer.label}
-            </h4>
-            {layer.sublabel && (
-              <span className="text-xs px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 font-medium">
-                {layer.sublabel}
-              </span>
-            )}
-          </div>
+          <h4 className={`text-sm font-semibold uppercase tracking-wider mb-4 ${layer.highlight ? 'text-amber-400' : 'text-slate-400'}`}>
+            {layer.label}
+          </h4>
           <div className="flex flex-wrap gap-3">
             {layer.items.map((item, j) => (
               <motion.span
@@ -195,18 +188,18 @@ export default function Home() {
 
   const principles = [
     { icon: '🔒', title: 'Local-First', desc: 'Your data never leaves your infrastructure. Governance happens at the edge, not in the cloud.' },
-    { icon: '🛡️', title: 'Authorization Over Detection', desc: 'Pattern-matching is fundamentally bypassable. External user profiles and trust levels provide real security.' },
-    { icon: '🌍', title: 'Open Standard', desc: 'Community-driven, open-source framework (AGPL-3.0). No vendor lock-in, no black boxes.' },
-    { icon: '🔌', title: 'Built for Small Teams', desc: 'Docker Compose MVP with one-command bootstrap (pudding up). No Kubernetes required.' },
+    { icon: '🛡️', title: 'Provable Compliance', desc: 'Hash-chained audit logs create tamper-evident proof that policies were enforced.' },
+    { icon: '🌍', title: 'Open Standard', desc: 'Community-driven, open-source framework. No vendor lock-in, no black boxes.' },
+    { icon: '🔌', title: 'Agent Agnostic', desc: 'Works with any AI agent, any LLM provider, any orchestration framework.' },
   ]
 
   const features = [
-    { title: 'Gateway-First Architecture', desc: 'The gateway IS the sanitizer. All agent traffic flows through a single enforcement point with 5 detection backends.', icon: '🚪' },
-    { title: '5 Detection Backends', desc: 'Regex patterns, NER (spaCy), Presidio, entropy analysis, and service-specific secret detection working together.', icon: '🧹' },
-    { title: 'Container Isolation', desc: 'Two-network architecture: agents only reach the gateway (agent-net), backends are internal only (backend-net).', icon: '🐳' },
-    { title: 'External User Profiles', desc: 'Trust levels (NONE/KNOWN/TRUSTED/PRIVILEGED) enable authorization-based access control beyond pattern matching.', icon: '👤' },
-    { title: 'Agent Lifecycle', desc: 'Full lifecycle management: PENDING, ACTIVE, STOPPED, REMOVED. Track and control every agent in your system.', icon: '🔄' },
-    { title: 'Knowledge Engine', desc: 'Integration layer that works with existing solutions like Rowboat. No need to reinvent vector stores.', icon: '🧠' },
+    { title: 'Policy Engine', desc: 'Declarative YAML policies that define exactly what your AI agents can and cannot do. Versioned, auditable, hot-reloadable.', icon: '📋' },
+    { title: 'Data Sanitizer', desc: 'Multi-layered PII and secret detection with pattern matching, entity recognition, entropy analysis, and service-specific credential scanning.', icon: '🧹' },
+    { title: 'External User Profiles', desc: 'Define what each external entity can see about you. Trust levels control access at the identity layer, not just pattern matching.', icon: '👤' },
+    { title: 'Audit Logger', desc: 'Tamper-evident, hash-chained logs with optional blockchain anchoring for maximum trust.', icon: '📝' },
+    { title: 'Container Isolation', desc: 'Agents are sandboxed in their own network and can only communicate through the gateway. Backends stay fully internal.', icon: '🐳' },
+    { title: 'RAG/Memory Layer', desc: 'Local vector store with governed memory. Full control over what your agents remember and who can access it.', icon: '🧠' },
   ]
 
   const frameworks = [
@@ -370,9 +363,8 @@ export default function Home() {
               <span className="text-slate-500">your agents and the world.</span>
             </motion.h3>
             <motion.p variants={fadeUp} className="text-lg text-slate-400 mb-6">
-              The PUDDING gateway sits between your AI agents and external services. Container isolation ensures 
-              agents can only reach the gateway (agent-net), while backends remain internal (backend-net). 
-              Five detection backends work together to sanitize data in real-time.
+              PUDDING sits between your AI agents and external services, enforcing policies, sanitizing data,
+              and creating tamper-evident audit trails for every interaction.
             </motion.p>
           </div>
           <motion.div variants={fadeUp}>
