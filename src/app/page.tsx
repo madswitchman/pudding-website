@@ -102,7 +102,7 @@ function CodeBlock() {
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
           <span className="ml-3 text-sm text-slate-500 font-mono">pudding-policy.yaml</span>
         </div>
-        <pre className="p-6 font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
+        <pre className="p-4 md:p-6 font-mono text-xs md:text-base leading-relaxed overflow-x-auto">
           {lines.map((line, i) => (
             <motion.div
               key={i}
@@ -126,7 +126,7 @@ function ArchitectureDiagram() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const layers = [
     { label: 'AI Agents', items: ['LLM Agent', 'Code Agent', 'Data Agent', 'Custom Agent'], color: 'from-indigo-500/20 to-indigo-600/10', border: 'border-indigo-500/30' },
-    { label: 'PUDDING Governance Layer', items: ['Policy Engine', 'Data Sanitizer', 'RAG/Memory', 'Audit Logger', 'Rules Engine'], color: 'from-amber-400/20 to-amber-500/10', border: 'border-amber-400/40', highlight: true },
+    { label: 'PUDDING Gateway', items: ['Policy Engine', 'Data Sanitizer', 'Audit Logger', 'User Profiles', 'Secret Detection'], color: 'from-amber-400/20 to-amber-500/10', border: 'border-amber-400/40', highlight: true },
     { label: 'External Services', items: ['APIs', 'Databases', 'LLM Providers', 'Cloud Services'], color: 'from-slate-500/20 to-slate-600/10', border: 'border-slate-500/30' },
   ]
 
@@ -194,12 +194,12 @@ export default function Home() {
   ]
 
   const features = [
-    { title: 'Policy Engine', desc: 'Declarative YAML policies that define exactly what your AI agents can and cannot do.', icon: '📋' },
-    { title: 'Data Sanitizer', desc: 'PII/PHI detection across 80+ data types and 12 regulatory frameworks. Real-time scanning.', icon: '🧹' },
-    { title: 'RAG/Memory Layer', desc: 'Local vector store with governed memory. Full control over what your agents remember.', icon: '🧠' },
+    { title: 'Policy Engine', desc: 'Declarative YAML policies that define exactly what your AI agents can and cannot do. Versioned, auditable, hot-reloadable.', icon: '📋' },
+    { title: 'Data Sanitizer', desc: 'Multi-layered PII and secret detection with pattern matching, entity recognition, entropy analysis, and service-specific credential scanning.', icon: '🧹' },
+    { title: 'External User Profiles', desc: 'Define what each external entity can see about you. Trust levels control access at the identity layer, not just pattern matching.', icon: '👤' },
     { title: 'Audit Logger', desc: 'Tamper-evident, hash-chained logs with optional blockchain anchoring for maximum trust.', icon: '📝' },
-    { title: 'Rules Engine', desc: 'HIPAA, SOC 2, FedRAMP, GDPR, NIST, and custom compliance rule sets out of the box.', icon: '⚖️' },
-    { title: 'Verification Modes', desc: 'Local, distributed, and public anchor verification. Choose your trust model.', icon: '✅' },
+    { title: 'Container Isolation', desc: 'Agents are sandboxed in their own network and can only communicate through the gateway. Backends stay fully internal.', icon: '🐳' },
+    { title: 'RAG/Memory Layer', desc: 'Local vector store with governed memory. Full control over what your agents remember and who can access it.', icon: '🧠' },
   ]
 
   const frameworks = [
@@ -207,8 +207,8 @@ export default function Home() {
   ]
 
   const roadmap = [
-    { phase: 'Phase 1', time: 'Q1 2026', title: 'Core Framework', desc: 'Policy engine, data sanitizer, audit logger, and compliance rules engine.', active: true },
-    { phase: 'Phase 2', time: 'Q2 2026', title: 'Open Source Launch', desc: 'Public repository, documentation, community building, and early adopter program.' },
+    { phase: 'Phase 1', time: 'Q1 2026', title: 'Gateway & Detection', desc: 'Gateway-first architecture with 5 detection backends, container isolation, agent lifecycle management. 332+ tests passing.', active: true, complete: true },
+    { phase: 'Phase 2', time: 'Q2 2026', title: 'Policy Engine & CLI', desc: 'Policy engine MVP, CLI interface (pudding scan, pudding sanitize, pudding resolve), documentation, and early adopter program.' },
     { phase: 'Phase 3', time: 'Q3-Q4 2026', title: 'Premium Services', desc: 'Enterprise support, managed compliance, advanced analytics, and custom integrations.' },
     { phase: 'Phase 4', time: '2027', title: 'Standard Adoption', desc: 'Industry partnerships, certification programs, and regulatory body engagement.' },
   ]
@@ -487,7 +487,7 @@ export default function Home() {
               className="relative pl-12 md:pl-20 pb-12 last:pb-0"
             >
               <div className={`absolute left-2.5 md:left-6.5 top-1 w-3 h-3 rounded-full border-2 ${
-                item.active ? 'bg-amber-400 border-amber-400 shadow-lg shadow-amber-400/40' : 'bg-navy-800 border-slate-500'
+                item.complete ? 'bg-green-400 border-green-400 shadow-lg shadow-green-400/40' : item.active ? 'bg-amber-400 border-amber-400 shadow-lg shadow-amber-400/40' : 'bg-navy-800 border-slate-500'
               }`} />
               <div className="text-sm text-amber-400 font-semibold mb-1">{item.phase} - {item.time}</div>
               <h4 className="text-xl font-bold mb-2">{item.title}</h4>
