@@ -102,7 +102,7 @@ function CodeBlock() {
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
           <span className="ml-3 text-sm text-slate-500 font-mono">pudding-policy.yaml</span>
         </div>
-        <pre className="p-6 font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
+        <pre className="p-4 md:p-6 font-mono text-xs md:text-base leading-relaxed overflow-x-auto">
           {lines.map((line, i) => (
             <motion.div
               key={i}
