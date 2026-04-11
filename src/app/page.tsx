@@ -187,7 +187,7 @@ export default function Home() {
   ]
 
   const principles = [
-    { icon: '🔒', title: 'Local-First', desc: 'Your data never leaves your infrastructure. Governance happens at the edge, not in the cloud.' },
+    { icon: '🔒', title: 'Local-First', desc: 'Your data stays on your infrastructure. Governance happens at the edge, not in the cloud.' },
     { icon: '🛡️', title: 'Provable Compliance', desc: 'Hash-chained audit logs create tamper-evident proof that policies were enforced.' },
     { icon: '🌍', title: 'Open Standard', desc: 'Community-driven, open-source framework. No vendor lock-in, no black boxes.' },
     { icon: '🔌', title: 'Agent Agnostic', desc: 'Works with any AI agent, any LLM provider, any orchestration framework.' },
@@ -197,7 +197,7 @@ export default function Home() {
     { title: 'Policy Engine', desc: 'Declarative YAML policies that define exactly what your AI agents can and cannot do. Versioned, auditable, hot-reloadable.', icon: '📋' },
     { title: 'Data Sanitizer', desc: 'Multi-layered PII and secret detection with pattern matching, entity recognition, entropy analysis, and service-specific credential scanning.', icon: '🧹' },
     { title: 'External User Profiles', desc: 'Define what each external entity can see about you. Trust levels control access at the identity layer, not just pattern matching.', icon: '👤' },
-    { title: 'Audit Logger', desc: 'Tamper-evident, hash-chained logs with optional blockchain anchoring for maximum trust.', icon: '📝' },
+    { title: 'Audit Logger', desc: 'Tamper-evident, hash-chained logs with optional blockchain anchoring. Independently verifiable.', icon: '📝' },
     { title: 'Container Isolation', desc: 'Agents are sandboxed in their own network and can only communicate through the gateway. Backends stay fully internal.', icon: '🐳' },
     { title: 'RAG/Memory Layer', desc: 'Local vector store with governed memory. Full control over what your agents remember and who can access it.', icon: '🧠' },
   ]
@@ -248,7 +248,7 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-xl md:text-2xl text-slate-300 mb-3 max-w-3xl mx-auto"
           >
-            The open-source compliance and governance framework for agentic AI
+            Human-Owned AI Memory with Built-In Data Governance
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -411,7 +411,7 @@ export default function Home() {
             </motion.h3>
             <motion.p variants={fadeUp} className="text-lg text-slate-400">
               Define your compliance policies in simple YAML. PUDDING enforces them automatically
-              across every agent interaction, every time, with full audit trails.
+              across agent interactions, with full audit trails.
             </motion.p>
           </div>
           <motion.div variants={fadeUp}>
@@ -422,13 +422,16 @@ export default function Home() {
 
       {/* Regulatory Coverage */}
       <Section>
-        <motion.div variants={fadeUp} className="text-center mb-12">
+        <motion.div variants={fadeUp} className="text-center mb-6">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-400 mb-4">Regulatory Coverage</h2>
           <h3 className="text-3xl md:text-5xl font-bold">
-            Built for the frameworks<br />
-            <span className="text-slate-500">that matter.</span>
+            Designed to support<br />
+            <span className="text-slate-500">the frameworks that matter.</span>
           </h3>
         </motion.div>
+        <motion.p variants={fadeUp} className="text-center text-slate-400 mb-10 max-w-2xl mx-auto">
+          PUDDING helps satisfy audit requirements for the following standards. It does not confer certification.
+        </motion.p>
         <motion.div variants={stagger} className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {frameworks.map((fw) => (
             <motion.span
