@@ -3,11 +3,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'PUDDING - Provable Unified Data-Driven Intelligent Normative Governance',
-  description: 'The open-source compliance and governance framework for agentic AI. The proof is in the PUDDING.',
-  keywords: ['AI governance', 'compliance', 'HIPAA', 'SOC 2', 'agentic AI', 'open source'],
+  description: 'Human-Owned AI Memory with Built-In Data Governance. The proof is in the PUDDING.',
+  keywords: ['AI governance', 'human-owned AI memory', 'data governance', 'compliance', 'agentic AI', 'open source'],
   openGraph: {
     title: 'PUDDING - AI Governance Framework',
-    description: 'The open-source compliance and governance framework for agentic AI. The proof is in the PUDDING.',
+    description: 'Human-Owned AI Memory with Built-In Data Governance. The proof is in the PUDDING.',
     url: 'https://getpudding.dev',
     siteName: 'PUDDING',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PUDDING - AI Governance Framework',
-    description: 'The open-source compliance and governance framework for agentic AI.',
+    description: 'Human-Owned AI Memory with Built-In Data Governance.',
     images: ['https://getpudding.dev/og-image.png'],
   },
 }

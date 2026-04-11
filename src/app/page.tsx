@@ -248,7 +248,7 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-xl md:text-2xl text-slate-300 mb-3 max-w-3xl mx-auto"
           >
-            The open-source compliance and governance framework for agentic AI
+            Human-Owned AI Memory with Built-In Data Governance
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -422,13 +422,16 @@ export default function Home() {
 
       {/* Regulatory Coverage */}
       <Section>
-        <motion.div variants={fadeUp} className="text-center mb-12">
+        <motion.div variants={fadeUp} className="text-center mb-6">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-400 mb-4">Regulatory Coverage</h2>
           <h3 className="text-3xl md:text-5xl font-bold">
-            Built for the frameworks<br />
-            <span className="text-slate-500">that matter.</span>
+            Designed to support<br />
+            <span className="text-slate-500">the frameworks that matter.</span>
           </h3>
         </motion.div>
+        <motion.p variants={fadeUp} className="text-center text-slate-400 mb-10 max-w-2xl mx-auto">
+          PUDDING helps satisfy audit requirements for the following standards. It does not confer certification.
+        </motion.p>
         <motion.div variants={stagger} className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {frameworks.map((fw) => (
             <motion.span
