@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PUDDING - AI Governance Framework',
-    description: 'Human-Owned AI Memory with Built-In Data Governance.',
+    description: 'Human-Owned AI Memory with Built-In Data Governance. The proof is in the PUDDING.',
     images: ['https://getpudding.dev/og-image.png'],
   },
 }
